@@ -1,0 +1,547 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0d;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   PÁGINA
+========================================= */
+
+.page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================================
+   GLOWS
+========================================= */
+
+.glow {
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.28;
+}
+
+.glow-pink {
+    width: 420px;
+    height: 420px;
+
+    background: #ff1f5e;
+
+    top: -250px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    opacity: 0.20;
+}
+
+.glow-orange {
+    width: 300px;
+    height: 300px;
+
+    background: #ffad4a;
+
+    bottom: -130px;
+    right: -130px;
+}
+
+
+/* =========================================
+   CONTAINER PRINCIPAL
+========================================= */
+
+.profile {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 520px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-container {
+    width: 125px;
+    height: 125px;
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    border: 3px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 0 0 8px rgba(255, 31, 94, 0.08),
+        0 15px 45px rgba(255, 31, 94, 0.28);
+
+    margin-bottom: 28px;
+
+    animation: logoAppear 0.8s ease forwards;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+    width: 100%;
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    color: #ff1f5e;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(42px, 10vw, 64px);
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    color: #b8b8bc;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.links {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.link-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 13px 18px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.link-card:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255, 31, 94, 0.10);
+
+    border-color: rgba(255, 31, 94, 0.65);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(255, 31, 94, 0.12);
+}
+
+
+/* =========================================
+   CARD DE VAGAS
+========================================= */
+
+.link-card.featured {
+    background:
+        linear-gradient(
+            100deg,
+            rgba(255, 31, 94, 0.18),
+            rgba(255, 173, 74, 0.07)
+        );
+
+    border-color: rgba(255, 31, 94, 0.45);
+}
+
+
+/* =========================================
+   ÍCONES
+========================================= */
+
+.link-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #ff1f5e;
+
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    margin-right: 15px;
+
+    box-shadow:
+        0 7px 20px rgba(255, 31, 94, 0.22);
+}
+
+.linkedin-icon {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
+
+
+/* =========================================
+   TEXTO DOS LINKS
+========================================= */
+
+.link-content {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+.link-content strong {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+.link-content small {
+    color: #96969b;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================
+   SETA
+========================================= */
+
+.arrow {
+    margin-left: 12px;
+
+    color: #ff1f5e;
+
+    font-size: 22px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.link-card:hover .arrow {
+    transform: translate(3px, -3px);
+
+    color: #ffad4a;
+}
+
+
+/* =========================================
+   WHATSAPP
+========================================= */
+.whatsapp .link-icon {
+    background: #ffad4a;
+    color: #111111;
+
+    box-shadow:
+        0 7px 20px rgba(255, 173, 74, 0.18);
+}
+
+.whatsapp-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #111111;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 38px;
+}
+
+.footer-line {
+    height: 1px;
+
+    flex: 1;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+    color: #68686d;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+@keyframes logoAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 40px 18px;
+    }
+
+    .logo-container {
+        width: 105px;
+        height: 105px;
+
+        border-radius: 27px;
+
+        margin-bottom: 23px;
+    }
+
+    .intro {
+        margin-bottom: 28px;
+    }
+
+    h1 {
+        font-size: 45px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .description {
+        font-size: 14px;
+
+        max-width: 340px;
+    }
+
+    .link-card {
+        min-height: 70px;
+
+        border-radius: 17px;
+
+        padding: 11px 14px;
+    }
+
+    .link-icon {
+        width: 44px;
+        height: 44px;
+
+        border-radius: 13px;
+
+        margin-right: 12px;
+    }
+}
+
+
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .page {
+        padding: 30px 14px;
+    }
+
+    .logo-container {
+        width: 92px;
+        height: 92px;
+    }
+
+    h1 {
+        font-size: 39px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .link-content strong {
+        font-size: 15px;
+    }
+
+    .link-content small {
+        font-size: 11px;
+    }
+
+    .link-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   INSTAGRAM ICON
+========================================= */
+
+.instagram-icon svg {
+    width: 25px;
+    height: 25px;
+
+    fill: none;
+    stroke: #ffffff;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.instagram-icon .instagram-dot {
+    fill: #ffffff;
+    stroke: none;
+}
+
+
+/* =========================================
+   CAREERS ICON
+========================================= */
+
+.careers-icon svg {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+    stroke: #ffffff;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
