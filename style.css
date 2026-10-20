@@ -153,7 +153,7 @@ h1 {
 
     letter-spacing: -2px;
 
-    font-weight: 800;
+    font-weight: 700;
 
     margin-bottom: 20px;
 }
@@ -287,8 +287,6 @@ h1 {
 }
 
 
-
-
 /* =========================================
    TEXTO DOS LINKS
 ========================================= */
@@ -324,15 +322,36 @@ h1 {
 ========================================= */
 
 .arrow {
+    width: 32px;
+    height: 32px;
+
     margin-left: 12px;
 
-    color: #ff1f5e;
+    flex-shrink: 0;
 
-    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ff1f5e;
 
     transition:
         transform 0.3s ease,
         color 0.3s ease;
+}
+
+.arrow svg {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .link-card:hover .arrow {
@@ -345,6 +364,7 @@ h1 {
 /* =========================================
    WHATSAPP
 ========================================= */
+
 .whatsapp .link-icon {
     background: #ffad4a;
     color: #111111;
@@ -356,8 +376,10 @@ h1 {
 .whatsapp-icon svg {
     width: 24px;
     height: 24px;
+
     fill: #111111;
 }
+
 
 /* =========================================
    FOOTER
@@ -413,7 +435,7 @@ h1 {
 
 
 /* =========================================
-   TABLET
+   TABLET / CELULAR
 ========================================= */
 
 @media (max-width: 600px) {
